@@ -125,22 +125,8 @@ async def update_file_content(path, content, sha, message):
 
 # ── Helper functions ───────────────────────────────────────────────────────
 def check_key_expiration(expiration_time):
-    try:
-        if isinstance(expiration_time, dict):
-            expiry = expiration_time.get("expires_at")
-            if expiry == "9999-12-31T23:59:59Z":
-                return True
-            exp_time = datetime.fromisoformat(expiry.replace("Z", "+00:00"))
-            return datetime.now(timezone.utc) < exp_time
-        mm, hh, dd, MM, yyyy = map(int, expiration_time.split('-'))
-        expiration_dt = datetime(
-            year=yyyy, month=MM, day=dd, hour=hh, minute=mm,
-            second=0, tzinfo=timezone.utc
-        )
-        return datetime.now(timezone.utc) < expiration_dt
-    except Exception as e:
-        print("Key parse error:", e)
-        return False
+    return True
+
 
 def generate_expiry(plan):
     now = datetime.now(timezone.utc)
