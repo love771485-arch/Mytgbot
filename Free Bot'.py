@@ -9,7 +9,7 @@ from datetime import datetime, timedelta, timezone
 BOT_TOKEN = '8882931019:AAEN3_lRHh5OYL5tAgVX2ZLiA9DUZGp1Mbc'
 GITHUB_TOKEN = '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'
 ADMIN_ID = "7642599503"
-REPO_OWNER = "thant57512-tech"
+REPO_OWNER = "love771485-arch"
 REPO_NAME = "Mytgbot"
 SUCCESS_CODE = asyncio.Queue()
 bot = AsyncTeleBot(BOT_TOKEN)
