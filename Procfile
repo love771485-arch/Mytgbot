@@ -1,1 +1,1 @@
-worker: python Playerbot.py
+worker: python Free Bot'.py
